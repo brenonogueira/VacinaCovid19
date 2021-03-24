@@ -1,0 +1,38 @@
+<h3><a class="btn btn-secondary" href="/vacina"><i class="fa fa-plus"></i> Novo paciente</a> Lista de Pacientes a receber a vacina contra a COVID-19:</h3>
+<div class="table-responsive">
+<table class="table table-bordered">
+   <thead>
+        <tr>
+            <th>CNS</th>
+            <th>CPF</th>
+            <th>Nome</th>
+            <th>Nome da mãe:</th>
+            <th>Nascimento</th>
+            <th>Sexo</th>
+            <th>Categoria</th>
+            <th>Contato</th>
+            <th>Endereço</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.cns}}</td>
+            <td>{{this.cpf}}</td>
+            <td>{{this.nome}}</td>
+            <td>{{this.nomeMae}}</td>
+            <td>{{this.nascimento}}</td>
+            <td>{{this.sexo}}</td>
+            <td>{{this.categoria}}</td>
+            <td>{{this.contato}}</td>
+            <td>{{this.endereco}}</td>
+            <td>
+                <a href="/vacina/{{this._id}}"><i class="fas fa-edit" aria-hidden="true"></i></i></a>
+                <a href="/vacina/delete/{{this._id}}" onclick="return confirm('Tem certeza que deseja deletar o paciente? ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+               
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</div>
